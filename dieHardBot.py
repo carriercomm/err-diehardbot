@@ -5,10 +5,7 @@
 mentions and respond with a random line spoken by that character in the film.
 """
 
-
-from errbot.botplugin import BotPlugin
-from errbot.jabberbot import botcmd
-
+from errbot import BotPlugin, botcmd
 from dieHard import DieHard
 
 
@@ -31,6 +28,7 @@ class DieHardBotBuilder(type):
 
 class DieHardBot(BotPlugin):
     __metaclass__ = DieHardBotBuilder
+    min_err_version = '1.6.0'
 
 
     def __init__(self):
