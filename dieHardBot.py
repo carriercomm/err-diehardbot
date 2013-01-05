@@ -4,6 +4,8 @@
 """A bot which will respond to various Die Hard character name commands and
 mentions and respond with a random line spoken by that character in the film.
 """
+from abc import ABCMeta
+import logging
 
 from errbot import BotPlugin, botcmd
 from dieHard import DieHard
@@ -17,7 +19,7 @@ def generate(character):
     return f
 
 
-class DieHardBotBuilder(type):
+class DieHardBotBuilder(ABCMeta):
     def __new__(mcs, name, bases, classDict):
         newClassDict = dict(classDict.items() +
                             [(character, botcmd(generate(character)))

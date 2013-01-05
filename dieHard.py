@@ -7,6 +7,7 @@
 from random import choice
 import re
 import os
+import six
 
 
 class DieHard(object):
@@ -28,7 +29,7 @@ class DieHard(object):
     def __init__(self):
         super(DieHard, self).__init__()
         self.lines = {}
-        for name, name_re in DieHard.CHARACTERS.iteritems():
+        for name, name_re in six.iteritems(DieHard.CHARACTERS):
             self.lines[name] = self.get_lines(name_re)
 
 
@@ -71,4 +72,4 @@ class DieHard(object):
 if __name__ == "__main__":
     dh = DieHard()
     for c in DieHard.CHARACTERS:
-        print "%s: %s" % (c, dh.get_random(c))
+        print ("%s: %s" % (c, dh.get_random(c)))
