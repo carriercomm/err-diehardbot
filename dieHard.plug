@@ -1,6 +1,9 @@
 [Core]
 Name = DieHard
 Module = dieHardBot
-    
+
+[Python]
+Version = 2+
+
 [Documentation]
 Description = Die Hard
